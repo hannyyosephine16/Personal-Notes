@@ -1,7 +1,21 @@
 import React from "react";
 
-function DeletedButton({id, onDelete}){
-    return <button className='item_deleted' onClick={()=>onDelete(id)}>Delete</button>
+function DeleteButton({id, onDelete, title}){
+    const handleDelete = () => {
+        if(window.confirm(`Apakah Anda yakin ingin menghapus catatan "${title}"?`)) {
+            onDelete(id);
+        }
+    };
+    
+    return (
+        <button 
+            className='item_deleted' 
+            onClick={handleDelete}
+            title="Hapus catatan"
+        >
+            🗑️ Hapus
+        </button>
+    );
 }
 
-export default DeletedButton;
+export default DeleteButton;
