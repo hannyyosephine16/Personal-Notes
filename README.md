@@ -1,70 +1,129 @@
-# Getting Started with Create React App
+# Notes App - Aplikasi Pencatatan
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aplikasi pencatatan sederhana dan elegan yang dibangun menggunakan HTML, CSS, dan JavaScript dengan Web Components dan RESTful API.
 
-## Available Scripts
+## 🚀 Fitur
 
-In the project directory, you can run:
+- ✅ Tambah catatan baru
+- ✅ Hapus catatan
+- ✅ Arsipkan catatan
+- ✅ Batalkan arsip catatan
+- ✅ Real-time form validation
+- ✅ Responsive design
+- ✅ Modern UI dengan glassmorphism effect
+- ✅ Loading indicator
+- ✅ Error notifications dengan SweetAlert2
+- ✅ Animasi halus untuk interaksi pengguna
+- ✅ Integrasi dengan RESTful API
 
-### `npm start`
+## 🛠️ Teknologi
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **HTML5** - Struktur aplikasi
+- **CSS3** - Styling dan animasi
+- **JavaScript ES6+** - Logika aplikasi
+- **Web Components** - Custom elements
+- **CSS Grid** - Layout responsif
+- **Fetch API** - Mengakses data dari server
+- **Webpack** - Module bundler
+- **SweetAlert2** - Library untuk notifikasi
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📂 Struktur Folder
 
-### `npm test`
+```
+notes-app/
+├── src/
+│   ├── components/
+│   │   ├── app-header.js
+│   │   ├── loading-indicator.js
+│   │   ├── note-form.js
+│   │   ├── note-item.js
+│   │   └── toast-notification.js
+│   ├── services/
+│   │   └── api-service.js
+│   ├── styles/
+│   │   └── styles.css
+│   ├── app.js
+│   └── index.html
+├── webpack.common.js
+├── webpack.dev.js
+├── webpack.prod.js
+├── package.json
+├── .prettierrc
+└── README.md
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚀 Memulai Pengembangan
 
-### `npm run build`
+### Prasyarat
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Node.js (versi 14 atau lebih baru)
+- npm (versi 6 atau lebih baru)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Instalasi
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone repositori ini:
 
-### `npm run eject`
+```bash
+git clone https://github.com/username/notes-app.git
+cd notes-app
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Install dependensi:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Jalankan aplikasi dalam mode development:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm run start-dev
+```
 
-## Learn More
+4. Buka browser dan akses `http://localhost:9000`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Build untuk Production
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Untuk membuat versi production dari aplikasi:
 
-### Code Splitting
+```bash
+npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+File hasil build akan tersedia di folder `dist/`.
 
-### Analyzing the Bundle Size
+## 📝 API
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Aplikasi ini menggunakan Dicoding Notes API yang tersedia di https://notes-api.dicoding.dev/v2. Berikut adalah endpoint yang digunakan:
 
-### Making a Progressive Web App
+- `GET /notes` - Mendapatkan daftar catatan aktif
+- `GET /notes/archived` - Mendapatkan daftar catatan yang diarsipkan
+- `POST /notes` - Membuat catatan baru
+- `POST /notes/{id}/archive` - Mengarsipkan catatan
+- `POST /notes/{id}/unarchive` - Membatalkan arsip catatan
+- `DELETE /notes/{id}` - Menghapus catatan
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 📋 Fitur yang Diimplementasikan
 
-### Advanced Configuration
+### 1. Kriteria Wajib
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- ✅ Mempertahankan semua kriteria submission sebelumnya
+- ✅ Memanfaatkan RESTful API sebagai sumber data
+- ✅ Menggunakan webpack sebagai module bundler
+- ✅ Menggunakan Fetch API untuk request asynchronous
+- ✅ Memiliki indikator loading saat melakukan proses request
 
-### Deployment
+### 2. Kriteria Opsional
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- ✅ Memiliki fitur arsip catatan
+- ✅ Menampilkan feedback saat terjadi error (menggunakan SweetAlert2)
+- ✅ Memiliki efek pergerakan halus/animasi (CSS transitions & animations)
+- ✅ Menerapkan Prettier sebagai code formatter
 
-### `npm run build` fails to minify
+## 🎨 Screenshot
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Screenshot akan ditambahkan setelah development]
+
+## 📝 Lisensi
+
+[Lisensi Anda]
